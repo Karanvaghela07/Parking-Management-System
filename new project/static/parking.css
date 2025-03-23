@@ -1,0 +1,30 @@
+.parking-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parking-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columns for cars */
+    gap: 10px;
+    margin: 20px;
+}
+
+.bike-grid {
+    grid-template-columns: repeat(20, 1fr); /* 20 columns for bikes */
+}
+
+.slot {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #333;
+    background-color: lightgreen;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.taken {
+    background-color: red;
+    color: white;
+}

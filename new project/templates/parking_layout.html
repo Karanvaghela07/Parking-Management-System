@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Layout - {{ location }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='parking.css') }}">
+</head>
+<body>
+    <h1>Parking Layout for {{ location }}</h1>
+    <h3>Total Car Slots: 50 | Available: {{ 50 - booked_cars|length }}</h3>
+    <h3>Total Bike Slots: 500 | Available: {{ 500 - booked_bikes|length }}</h3>
+
+    <div class="parking-container">
+        <!-- Car Parking Section -->
+        <div class="section car-parking">
+            <h2>Car Parking</h2>
+            <div class="parking-grid">
+                {% for slot in range(1, 51) %}  {# 50 car slots #}
+                    {% set slot_id = 'C' ~ slot %}
+                    {% if slot_id in booked_cars %}
+                        <div class="slot taken">Car {{ slot_id }} (Booked)</div>
+                    {% else %}
+                        <a href="/booking_form?location={{ location }}&slot={{ slot_id }}" class="slot available">Car {{ slot_id }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Bike Parking Section -->
+        <div class="section bike-parking">
+            <h2>Bike Parking</h2>
+            <div class="parking-grid bike-grid">
+                {% for slot in range(1, 501) %}  {# 500 bike slots #}
+                    {% set slot_id = 'B' ~ slot %}
+                    {% if slot_id in booked_bikes %}
+                        <div class="slot taken">Bike {{ slot_id }} (Booked)</div>
+                    {% else %}
+                        <a href="/booking_form?location={{ location }}&slot={{ slot_id }}" class="slot available">Bike {{ slot_id }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

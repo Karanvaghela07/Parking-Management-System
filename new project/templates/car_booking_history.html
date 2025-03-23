@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Parking History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='car_booking_history.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Car Parking History</h1>
+        <a href="{{ url_for('admin_dashboard') }}" class="button">Back to Dashboard</a>
+    </header>
+
+    <h2>Car Parking Bookings</h2>
+    <table border="1">
+        <tr>
+            <th>Slot</th>
+            <th>Name</th>
+            <th>Vehicle No</th>
+            <th>Contact</th>
+        </tr>
+        {% for booking in booked_cars %}
+        <tr>
+            <td>{{ booking.slot }}</td>
+            <td>{{ booking.name }}</td>
+            <td>{{ booking.vehicle_number }}</td>
+            <td>{{ booking.contact }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

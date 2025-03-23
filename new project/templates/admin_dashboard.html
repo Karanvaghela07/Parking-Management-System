@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_dashboard.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <div class="header_1">
+            <p class="user">Welcome, {{ username }}</p>
+            <nav>
+                <a href="{{ url_for('admin_logout') }}" class="log">Logout</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h3>Total Bookings: {{ total_bookings }}</h3>
+        <h3>Available Car Slots: {{ available_car_slots }}/50</h3>
+        <h3>Available Bike Slots: {{ available_bike_slots }}/500</h3>
+        
+        <div class="modules">
+
+            <section class="module">
+                <h2>Manage Parking Slots</h2>
+                <p>View and update parking slot availability.</p>
+                <a href="{{ url_for('parking') }}" class="button">Manage Slots</a>
+            </section>
+            
+            <section class="module">
+                <h2>Reports</h2>
+                <p>View detailed reports on parking usage and violations.</p>
+                <a href="{{ url_for('reports') }}" class="button">View Reports</a>
+            </section>
+            
+            <section class="module">
+                <h2>Car Parking History</h2>
+                <p>View the history of car parking bookings.</p>
+                <a href="{{ url_for('car_booking_history') }}" class="button">View Car History</a>
+            </section>
+            
+            <section class="module">
+                <h2>Bike Parking History</h2>
+                <p>View the history of bike parking bookings.</p>
+                <a href="{{ url_for('bike_booking_history') }}" class="button">View Bike History</a>
+            </section>
+            <!-- <section class="module">
+                <h3>Number Plate Recognition</h3>
+                <form action="{{ url_for('detect_plate') }}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="plate_image" required>
+                    <button type="submit">Scan Number Plate</button>
+                </form>
+
+            </section> -->
+            <section class="module">
+                <h2>Number Plate Recognition</h2>
+                <p>No Plate Status</p>
+                <a href="{{ url_for('bike_booking_history') }}" class="button">View Bike History</a>
+            </section>
+
+            
+        </div>
+
+<script>
+function toggleTable(tableId) {
+    var table = document.getElementById(tableId);
+    if (table.style.display === "none") {
+        table.style.display = "block";
+    } else {
+        table.style.display = "none";
+    }
+}
+</script>
+
+        
+        
+        
+    </main>
+</body>
+<script>
+    function toggleVisibility(id) {
+        var element = document.getElementById(id);
+        if (element.classList.contains("hidden")) {
+            element.classList.remove("hidden");
+        } else {
+            element.classList.add("hidden");
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,150 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full height */
+}
+
+/* Header styling */
+header {
+    background-color: #2980b9;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.h11 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.header_1 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user, .log {
+    font-size: 1rem;
+}
+
+/* Navigation */
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Centering Main Content */
+main {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px; /* To avoid overlapping with the fixed header */
+}
+
+/* Centered Modules */
+.modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 800px; /* Set a width limit */
+}
+
+/* Module Card */
+.module {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.module:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.module h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.module p {
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Button Styling */
+.button {
+    background-color: #2980b9;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #1c5980;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modules {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .header_1 {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .h11 {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+}

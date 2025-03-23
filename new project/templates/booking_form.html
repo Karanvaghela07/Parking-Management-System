@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='parking.css') }}">
+</head>
+<body>
+    <h1>Booking Form for {{ slot }}</h1>
+    <form action="/book" method="post">
+        <input type="hidden" name="location" value="{{ location }}">
+        <input type="hidden" name="slot" value="{{ slot }}">
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="vehicle_number">Vehicle Number:</label>
+        <input type="text" id="vehicle_number" name="vehicle_number" required>
+
+        <label for="contact">Contact Number:</label>
+        <input type="text" id="contact" name="contact" required>
+
+        <button type="submit">Confirm Booking</button>
+    </form>
+</body>
+</html>

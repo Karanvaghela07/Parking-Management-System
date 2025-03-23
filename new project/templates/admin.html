@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/admin">Admin</a> |
+        <a href="/user">User</a>
+    </nav>
+    <p>Welcome, Admin! Manage your system here.</p>
+    <ul>
+        <li>View Reports</li>
+        <li>Manage Users</li>
+        <li>Settings</li>
+    </ul>
+</body>
+</html>

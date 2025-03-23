@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='parking.css') }}">
+</head>
+<body>
+    <h1>Parking Ticket</h1>
+    <div class="ticket">
+        <p><strong>Location:</strong> {{ details.location }}</p>
+        <p><strong>Slot:</strong> {{ details.slot }}</p>
+        <p><strong>Name:</strong> {{ details.name }}</p>
+        <p><strong>Vehicle No:</strong> {{ details.vehicle_number }}</p>
+        <p><strong>Contact:</strong> {{ details.contact }}</p>
+        <p><strong>Status:</strong> Confirmed ✅</p>
+    </div>
+    <br>
+    <a href="/">🏠 Go to Home</a>
+</body>
+</html>
